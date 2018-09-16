@@ -1,10 +1,11 @@
-#!/usr/bin/env python
 import requests
+import revai
 
 def main():
-    print "Hello Rev.Ai"
-    r = requests.get('https://api.rev.ai/revspeech/v1beta/account', headers={'Authorization': 'Bearer <api-key>'})
-    print(r.text)
+    revai_api = revai.API('definitely not a real api key')
+    
+    result = revai_api.get_account()
+    print(result)
 
 if __name__ == '__main__':
   main()
